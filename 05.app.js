@@ -12,15 +12,15 @@ app.use('/', express.static( path.join(__dirname, 'public') ));
 app.get('/search', (req, res) => {
 	const q = req.query.q;
 	const lists = [
-		{title: `${q}물산`, content: `${q}물산, ${q}물산`, img:"/img/ny.jpg"},
-		{title: `${q}약국`, content: `${q}약국, ${q}약국`, img:"/img/chicago.jpg"},
-		{title: `${q}상사`, content: `${q}상사, ${q}상사`, img:"/img/sanfran.jpg"},
-		{title: `${q}약국`, content: `${q}약국, ${q}약국`, img:"/img/la.jpg"},
-		{title: `${q}화재`, content: `${q}화재, ${q}화재`, img:"/img/map.jpg"}
+		{title: `${q}물산`, content: `${q}물산, ${q}물산`, src:"/img/ny.jpg"},
+		{title: `${q}약국`, content: `${q}약국, ${q}약국`, src:"/img/chicago.jpg"},
+		{title: `${q}상사`, content: `${q}상사, ${q}상사`, src:"/img/sanfran.jpg"},
+		{title: `${q}약국`, content: `${q}약국, ${q}약국`, src:"/img/la.jpg"},
+		{title: `${q}화재`, content: `${q}화재, ${q}화재`, src:"/img/map.jpg"}
 	];
 	res.render('search', {lists, q});
 });
 
 app.use((req, res) => {
-	res.render('./html/404.html');
+	res.redirect('./html/404.html'); /* redirect!!! */
 })
