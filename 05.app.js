@@ -21,6 +21,21 @@ app.get('/search', (req, res) => {
 	res.render('search', {lists, q});
 });
 
+app.get('/main', (req, res) => {
+	const pug = {css: 'main', js: 'main'}
+	res.render('index', pug)
+})
+
+app.get('/about', (req, res) => {
+	const pug = {css: 'about', js: 'about'}
+	res.render('about', pug)
+})
+
+app.get('/pf', (req, res) => {
+	const pug = {css: 'pf', js: 'pf'}
+	res.render('pf', pug)
+})
+
 app.use((req, res) => {
 	res.redirect('./html/404.html'); /* redirect!!! */
 })
